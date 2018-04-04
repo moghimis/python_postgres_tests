@@ -1,0 +1,53 @@
+#!/usr/bin/python
+import psycopg2
+from config import config
+
+"""
+execute the DELETE statement. If you want to pass values to the DELETE statement, you use the placeholders ( %s) in the DELETE statement and pass input values to the second parameter of the execute() method.
+
+The DELETE statement with a placeholder for the value of the id field is as follows:
+
+DELETE FROM table_1 WHERE id = %s;
+
+To bind value value_1 to the placeholder, you call the execute() method and pass the input value as a tuple to the second parameter like the following:
+
+cur.execute(delete_sql, (value_1,))
+"""
+
+ 
+def delete_part(part_id):
+    """ delete part by part id """
+    conn = None
+    rows_deleted = 0
+    try:
+        # read database configuration
+        params = config()
+        # connect to the PostgreSQL database
+        conn = psycopg2.connect(**params)
+        # create a new cursor
+        cur = conn.cursor()
+        # execute the UPDATE  statement
+        cur.execute("DELETE FROM parts WHERE part_id = %s", (part_id,))
+        # get the number of updated rows
+        rows_deleted = cur.rowcount
+        # Commit the changes to the database
+        conn.commit()
+        # Close communication with the PostgreSQL database
+        cur.close()
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
+    finally:
+        if conn is not None:
+            conn.close()
+ 
+    return rows_deleted
+    
+    
+
+if __name__ == '__main__':
+    deleted_rows = delete_part(2)
+    print('The number of deleted rows: ', deleted_rows)
+
+
+
+
