@@ -1,0 +1,59 @@
+[
+    {
+        "geometry": {
+            "type": "LineString", 
+            "coordinates": [
+                [
+                    -91.98979, 
+                    15.644559999999998
+                ], 
+                [
+                    -91.98971, 
+                    15.645249999999999
+                ]
+            ]
+        }, 
+        "iso_code": "MEX", 
+        "l_postcode": null, 
+        "r_postcode": null, 
+        "link_id": 1186786776
+    }, 
+    {
+        "geometry": {
+            "type": "LineString", 
+            "coordinates": [
+                [
+                    -106.77742, 
+                    28.390159999999998
+                ], 
+                [
+                    -106.77806, 
+                    28.39076
+                ]
+            ]
+        }, 
+        "iso_code": "MEX", 
+        "l_postcode": null, 
+        "r_postcode": null, 
+        "link_id": 818231403
+    }, 
+    {
+        "geometry": {
+            "type": "LineString", 
+            "coordinates": [
+                [
+                    -98.89940999999999, 
+                    18.90605
+                ], 
+                [
+                    -98.89926, 
+                    18.906689999999998
+                ]
+            ]
+        }, 
+        "iso_code": "MEX", 
+        "l_postcode": null, 
+        "r_postcode": null, 
+        "link_id": 1130886811
+    }
+]
